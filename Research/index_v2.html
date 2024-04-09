@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Voice Conversion for Conversational Speech using Non-Parallel Corpora</title>
+		<meta name="viewport" content="width=device-width" />
+		<link rel="stylesheet" type="text/css" href="css/pcTest.css">
+	</head>
+	<body>
+		<div class="header">
+			<div class="logo-container">
+				<img class='iitm-logo' src="img/iitm-logo.jpg"/>
+			</div>
+			<div class="page-title" >
+				<div class= "page-title-main">
+						Voice Conversion
+				</div>
+				<div class= "page-title-sub above-640">
+						Department of Computer Science and Engineering, IIT Madras
+				</div>
+				<div class= "page-title-sub below-640">
+						Department of CSE, IIT Madras
+				</div>
+			</div>
+    
+		</div>
+		<div class="content">
+			<div class="instructions">
+				<b> Voice Conversion for Conversational Speech using Non-Parallel Corpora </b>
+				<br>
+				<br>
+				<br>
+				<br>
+
+				<!-- <div class="left-align">In a country like India, which has a diverse linguistic culture, code-switching is very common. Fluency in
+multiple languages brings in code-switching sub-consciously. Many of the daily-used words in native languages
+have been replaced by their English counterparts (such as fan, switch, light, train, etc.). Further, in the current
+scenario, one is surrounded by people of different linguistic backgrounds. This results in borrowing of words from
+other languages into one's vocabulary. Conversational speech may include sentences, each of which is a mixture
+of words from different languages, or a mixture of sentences from different languages. Such a scenario calls
+for the inclusion of code-switching ability in current TTS systems to produce natural sounding speech. These
+systems should be capable of synthesising code-switched sentences that preserve the original pronunciation of
+the words while maintaining the accent of the speaker.</span>
+			</div> -->
+			<p class="centeralign"><b> <u> Preliminary Experiment 1 : Source Content Disentanglement </u></b></p>
+			<br>
+			<table class="demo-table">
+
+				<tr>
+				    <th rowspan=2>Examples</th>
+				    <th colspan="3" class="centeralign">Systems</th>
+				</tr>
+			  <tr>
+				    <th>Source </th>
+				    <th>Target</th>
+				    <th>Generated</th>
+			  </tr>
+			  
+			  <tr>
+			  		<td class="type">
+				    	Example 1 
+				    	
+				    </td>
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/content_separation/orig/source.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				      <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/content_separation/orig/target.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>  			
+				     <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/content_separation/orig/generated.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td> 				    
+			  </tr>
+			</table>
+			<br>
+
+						<p class="centeralign"><b> <u>	Preliminary Experiment 2 - Adaptation : Read Speech VC versus Conversational Speech VC</u></b></p>
+			<br>
+			<br>
+			<table class="demo-table">
+				 <tr>
+				    <th rowspan=2>Examples</th>
+				    <th colspan="2" class="centeralign">Systems</th>
+				</tr>
+			  <tr>
+			  		<th>Original</th>
+				    <th>Adapatation data 7mins</th>
+
+			  </tr>
+			  
+			  <tr>
+			  		<td class="type">
+				    	Read Speech VC
+				    
+				    </td>
+	
+			  		<td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/adapt/train_marathifemale_00302.wav"></audio><img  width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/adapt/train_marathifemale_00302_adapted.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>	
+			
+
+			  </tr>
+			   <tr>
+			  		<td class="type">
+				    	Conversational Speech VC
+				    	
+				    </td>
+			  		 <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/adapt/conv_orig.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>	
+			  		<td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/adapt/conv_adapt.wav"></audio><img  width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				       
+			  </tr>
+			</table>
+
+
+			<p class="centeralign"><b> <u>	Experiment 1 : Monolingual Voice Adaptation </u></b></p>
+			<br>
+			<br>
+			Speaker 1 : Female
+			<table class="demo-table">
+
+				<tr>
+				    <th rowspan=2>Examples</th>
+				    <th colspan="3" class="centeralign">Systems</th>
+				</tr>
+			  <tr>
+				    <th>Original </th>
+				    <th>E2E</th>
+				    <th>HTS</th>
+			  </tr>
+			  
+			  <tr>
+			  		<td class="type">
+				    	Example 1 
+				    	
+				    </td>
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/mono/orig_02.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				      <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/mono/target_02.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>  			
+				     <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/HTS/iitm_unified_dep_02.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td> 				    
+			  </tr>
+			  <tr>
+			  		<td class="type">
+				    	Example 2 
+				    	
+				    </td>
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/mono/orig_05.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/mono/target_05.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				     <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/HTS/iitm_unified_dep_05.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td> 
+				    						    
+			  </tr>
+			  <tr>
+			  		<td class="type">
+				    	Example 3 
+				    	
+				    </td>
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/mono/orig_07.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				      <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/mono/target_07.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				     <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/HTS/iitm_unified_dep_07.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td> 
+				    	
+				    						    
+			  </tr>
+			  <tr>
+			  		<td class="type">
+				    	Example 4 
+				    	
+				    </td>
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/mono/orig_08.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				      <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/mono/target_08.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				     <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/HTS/iitm_unified_dep_08.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td> 
+				    								    
+			  </tr>
+			  <tr>
+			  		<td class="type">
+				    	Example 5 
+				  
+				    </td>
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/mono/orig_18.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				      <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/mono/target_18.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				     <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/HTS/iitm_unified_dep_18.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td> 
+				    	
+				    							    
+			  </tr>
+			</table>
+			<br>
+			Speaker 2 : Male
+			<table class="demo-table">
+
+				<tr>
+				    <th rowspan=2>Examples</th>
+				    <th colspan="2" class="centeralign">Systems</th>
+				</tr>
+			  <tr>
+				    <th>Original </th>
+				    <th>English</th>
+		
+			  </tr>
+			  
+			  <tr>
+			  		<td class="type">
+				    	Example 1 
+				    	
+				    </td>
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/mitesh/n_orig_p502_002.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				      <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/mitesh/n_p502_002.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>  		
+				     				    
+			  </tr>
+			  <tr>
+			  		<td class="type">
+				    	Example 2 
+				    	
+				    </td>
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/mitesh/n_orig_p502_008.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/mitesh/n_p502_008.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				    
+				    						    
+			  </tr>
+			  <tr>
+			  		<td class="type">
+				    	Example 3 
+				    	
+				    </td>
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/mitesh/n_orig_p502_026.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				      <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/mitesh/n_p502_026.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				   
+				    						    
+			  </tr>
+			  <tr>
+			  		<td class="type">
+				    	Example 4 
+				    	
+				    </td>
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/mitesh/n_orig_p502_040.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				      <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/mitesh/n_p502_040.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				   				    
+			  </tr>
+			  <tr>
+			  		<td class="type">
+				    	Example 5 
+				    </td>
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/mitesh/n_orig_p502_036.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				      <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/mitesh/n_p502_036.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>	
+				      							    
+			  </tr>
+			</table>	
+			<br>
+			<br>
+
+			<p class="centeralign"><b> <u>	Experiment 2 : Cross-Lingual Voice Adaptation (Pruning) </u></b></p>
+			<br>
+			<br>
+			<table class="demo-table">
+<br>
+			  <tr>
+				    <th rowspan=2>Examples</th>
+				    <th colspan="4" class="centeralign">System Comparison
+				    </th>
+				</tr>
+			  <tr>
+				    <th>Original(English)</th>
+				    <th>Manually Cleaned</th>
+				    <th>Auto without prune</th>
+				    <th>Auto with prune</th>
+			  </tr>
+			  
+			  <tr>
+			  		<td class="type">
+				    	Example 1 
+				    </td>
+
+				  
+
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/cross/orig_01.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				     
+				      <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/cross/test_01.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				     <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/cross/auto_01.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/cross/n_test_deepa_hindi_0007_normalized_synthesis_new.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+
+				    							    
+			  </tr>
+			  <tr>
+			  		<td class="type">
+				    	Example 2 
+				    	
+				    </td>
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/cross/orig_02.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+
+				     
+
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/cross/test_03.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				     <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/cross/auto_03.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/cross/n_test_deepa_hindi_0021_normalized_synthesis_new.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				    						    
+			  </tr>
+			  <tr>
+			  		<td class="type">
+				    	Example 3 
+				    	
+				    </td>
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/cross/orig_03.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				     
+
+				      <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/cross/test_10.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+
+				      <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/cross/auto_10.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				    	
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/cross/n_test_deepa_hindi_0010_normalized_synthesis_new.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>	
+				    						    
+			  </tr>
+			  <tr>
+			  		<td class="type">
+				    	Example 4 
+				    	</td>
+	
+
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/cross/orig_04.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				   
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/cross/test_11.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+
+				      <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/cross/auto_11.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/cross/n_test_deepa_hindi_0022_normalized_synthesis_new.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				    								    
+			  </tr>
+			  <tr>
+			  		<td class="type">
+				    	Example 5 
+				  
+				    </td>
+
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/cross/orig_05.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				      
+
+				      <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/cross/test_13.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				     <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/cross/auto_13.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/cross/n_test_deepa_hindi_0028_normalized_synthesis_new.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				    							    
+			  </tr> 
+
+</table>
+<br>
+Pruning Experiment on Another Speaker
+<br>
+<table class="demo-table">
+			  <tr>
+				    <th rowspan=2>Examples</th>
+				    <th colspan="3" class="centeralign">Systems</th>
+				</tr>
+			  <tr>
+				    <th>Original</th>
+				    <th>English</th>
+				    <th>Hindi</th>
+			  </tr>
+			  
+			  <tr>
+			  		<td class="type">
+				    	Example 1 
+				    	
+				    </td>
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/109107154/original/test_06.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				      <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/109107154/english/test_06.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/109107154/hindi/test_06.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				    	
+
+				    							    
+			  </tr>
+			  <tr>
+			  		<td class="type">
+				    	Example 2 
+				    	
+				    </td>
+  					<td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/109107154/original/test_02.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				      <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/109107154/english/test_02.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/109107154/hindi/test_02.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				    						    
+			  </tr>
+			  <tr>
+			  		<td class="type">
+				    	Example 3 
+				    	
+				    </td>
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/109107154/original/test_03.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				      <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/109107154/english/test_03.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/109107154/hindi/test_03.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				    	
+				    						    
+			  </tr>
+			  <tr>
+			  		<td class="type">
+				    	Example 4 
+				    	
+				    </td>
+				     <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/109107154/original/test_04.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				      <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/109107154/english/test_04.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/109107154/hindi/test_04.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				    								    
+			  </tr>
+			  <tr>
+			  		<td class="type">
+				    	Example 5 
+				  
+				    </td>
+				     <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/109107154/original/test_05.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				      <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/109107154/english/test_05.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				    <td>
+				    	<a onclick="closeAllAudio();this.firstChild.play()"><audio><source src="audio_files/109107154/hindi/test_05.wav"></audio><img width="30" alt="" src="img/audio.png" height="30"></a>
+				    </td>
+				    	
+				    							    
+			  </tr>
+
+			</table>
+			<br>
+			<br>
+			Videos better when opened in firefox browser
+			<br>
+				<div id="wrapper"> 
+			    	<video width="400" height="300" controls> 
+			        <source type="video/mp4" src="videos/source_demo_1_new.mp4" /> 
+			    	</video>
+			    <video width="400" height="300" controls> 
+			        <source type="video/mp4" src="videos/target_vc.mp4" /> 
+			    </video>
+			    <div class="clear"></div> 
+				</div>
+				
+		</div>
+		<div class="footer">
+		</div>
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/code.js"></script>
+		
+	</body>
+</html>
